@@ -22,10 +22,12 @@ namespace EstacionamentoConsole.Controllers
 
             foreach (var cliente in clientes)
             {
-                Console.WriteLine($"ID: {cliente.Id}, Nome: {cliente.Nome}");
+                Console.WriteLine($"ID: {cliente.GetId}, Nome: {cliente.Nome}");
             }
             Console.WriteLine("\nPressione qualquer tecla para retornoar.");
             Console.ReadKey();
+
+
         }
 
         public void AdicionarCliente()
@@ -42,7 +44,7 @@ namespace EstacionamentoConsole.Controllers
             string telefone = Console.ReadLine();
 
             Cliente c1 = new Cliente(nome, cpf, telefone);
-
+           
             _context.Clientes.Add(c1);
             _context.SaveChanges();
 
@@ -60,7 +62,7 @@ namespace EstacionamentoConsole.Controllers
             var clienteId = int.Parse(Console.ReadLine());
 
             // Buscar o cliente no banco de dados
-            var cliente = _context.Clientes.FirstOrDefault(cli => cli.Id == clienteId);
+            var clienteEncontrado = _context.Clientes.FirstOrDefault(cliente => cliente.Id == clien);
 
             if (cliente  == null)
                 Console.WriteLine("Clinte não encontrado.");

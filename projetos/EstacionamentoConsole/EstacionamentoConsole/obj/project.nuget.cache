@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RjKot+1ioRU=",
+  "dgSpecHash": "mXCOsIwXhnY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jose.fncarvalho1\\source\\repos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj",
+  "projectFilePath": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jose.fncarvalho1\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\jose.fncarvalho1\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

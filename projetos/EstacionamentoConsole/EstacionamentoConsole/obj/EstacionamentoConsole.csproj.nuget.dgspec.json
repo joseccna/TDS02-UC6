@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jose.fncarvalho1\\source\\repos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj": {}
+    "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jose.fncarvalho1\\source\\repos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj": {
+    "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jose.fncarvalho1\\source\\repos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj",
+        "projectUniqueName": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj",
         "projectName": "EstacionamentoConsole",
-        "projectPath": "C:\\Users\\jose.fncarvalho1\\source\\repos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj",
+        "projectPath": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\EstacionamentoConsole\\EstacionamentoConsole\\EstacionamentoConsole.csproj",
         "packagesPath": "C:\\Users\\jose.fncarvalho1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jose.fncarvalho1\\source\\repos\\EstacionamentoConsole\\EstacionamentoConsole\\obj\\",
+        "outputPath": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\EstacionamentoConsole\\EstacionamentoConsole\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

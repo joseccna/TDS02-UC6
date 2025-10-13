@@ -22,7 +22,7 @@ MenuPrincipal();
 void MenuPrincipal()
 {
     bool sair = false;
-    while (!sair) 
+    while (!sair)
     {
         Console.Clear();
         Console.WriteLine("==== Menu Principal ====");
@@ -34,7 +34,7 @@ void MenuPrincipal()
         if (opcao == "1")
         {
             MenuUsuarios();
-        } 
+        }
         else if (opcao == "0")
         {
             sair = true;
@@ -53,7 +53,8 @@ void MenuUsuarios()
         Console.Clear();
         Console.WriteLine("==== Gerenciar Usuários ====");
         Console.WriteLine("1. Listar usuários");
-        Console.WriteLine("2. Cadastrar usuário");
+        Console.WriteLine("2. Detalhes do usuário");
+        Console.WriteLine("3. Cadastrar usuário");
         Console.WriteLine("0. Voltar");
 
         string? opcao = Console.ReadLine();
@@ -64,6 +65,9 @@ void MenuUsuarios()
                 usuarioController.Listar();
                 break;
             case "2":
+                usuarioController.Detalhes();
+                break;
+            case "3":
                 usuarioController.Adicionar();
                 break;
             case "0":

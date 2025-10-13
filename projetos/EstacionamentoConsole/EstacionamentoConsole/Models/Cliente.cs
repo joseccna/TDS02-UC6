@@ -12,7 +12,7 @@ public partial class Cliente
         Telefone=telefone;
     }
 
-    public int Id { get; set; }
+    public int Id { get;  set; }
 
     public string Nome { get; set; } = null!;
 
