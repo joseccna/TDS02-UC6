@@ -14,6 +14,7 @@ namespace CadastroDeUsuario.Data
         
         public DbSet<Usuario> Usuarios { get; set; } // Representa a tabela Usuarios no banco de dados
 
+        public DbSet<Produto> Produtos { get; set; } // Representa a tabela Produtos no banco de dados
 
     }
 }

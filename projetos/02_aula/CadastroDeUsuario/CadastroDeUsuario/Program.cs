@@ -13,11 +13,17 @@ var host = Host.CreateDefaultBuilder(args)
 
     services.AddTransient<UsuarioController>(); // Adiciona o controlador de usuário ao contêiner de serviços
 
+    services.AddTransient<ProdutoController>(); // Adiciona o controlador de produto ao contêiner de serviços
+
 }).Build();
 
 var usuarioController = host.Services.GetRequiredService<UsuarioController>();
 
+var produtoController = host.Services.GetRequiredService<ProdutoController>();
+
 MenuPrincipal();
+
+MenuProdutos();
 
 void MenuPrincipal()
 {
@@ -27,6 +33,7 @@ void MenuPrincipal()
         Console.Clear();
         Console.WriteLine("==== Menu Principal ====");
         Console.WriteLine("1. Gerenciar Usuários");
+        Console.WriteLine("2. Gerenciar Produtos");
         Console.WriteLine("0. Sair");
 
         string? opcao = Console.ReadLine();
@@ -34,6 +41,12 @@ void MenuPrincipal()
         if (opcao == "1")
         {
             MenuUsuarios();
+        }
+        else if (opcao == "2")
+        {
+            // MenuProdutos();
+            MenuProdutos();
+
         }
         else if (opcao == "0")
         {
@@ -43,6 +56,41 @@ void MenuPrincipal()
     }
 
 
+}
+
+
+void MenuProdutos()
+{
+    bool voltar = false;
+    while (!voltar)
+    {
+        Console.Clear();
+        Console.WriteLine("==== Gerenciar Produtos ====");
+        Console.WriteLine("1. Listar produtos");
+        Console.WriteLine("2. Detalhes do produto");
+        Console.WriteLine("3. Cadastrar produto");
+        Console.WriteLine("5. Remover produto");
+        Console.WriteLine("0. Voltar");
+        string? opcao = Console.ReadLine();
+        switch (opcao)
+        {
+            case "1":
+                produtoController.Listar();
+                break;
+            case "2":
+                produtoController.Descricao();
+                break;
+            case "3":
+                produtoController.Adicionar();
+                break;
+            case "5":
+                produtoController.Remover();
+                break;
+            case "0":
+                voltar = true;
+                break;
+        }
+    }
 }
 
 void MenuUsuarios()
@@ -55,6 +103,8 @@ void MenuUsuarios()
         Console.WriteLine("1. Listar usuários");
         Console.WriteLine("2. Detalhes do usuário");
         Console.WriteLine("3. Cadastrar usuário");
+        Console.WriteLine("5. Remover usuário");
+
         Console.WriteLine("0. Voltar");
 
         string? opcao = Console.ReadLine();
@@ -69,6 +119,9 @@ void MenuUsuarios()
                 break;
             case "3":
                 usuarioController.Adicionar();
+                break;
+            case "5":
+                usuarioController.Remover();
                 break;
             case "0":
                 voltar = true;
