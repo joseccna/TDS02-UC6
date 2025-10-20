@@ -103,6 +103,7 @@ void MenuUsuarios()
         Console.WriteLine("1. Listar usuários");
         Console.WriteLine("2. Detalhes do usuário");
         Console.WriteLine("3. Cadastrar usuário");
+        Console.WriteLine("4. Atualizar usuário");
         Console.WriteLine("5. Remover usuário");
 
         Console.WriteLine("0. Voltar");
@@ -119,6 +120,9 @@ void MenuUsuarios()
                 break;
             case "3":
                 usuarioController.Adicionar();
+                break;
+            case "4":
+                usuarioController.AtualizarUsuario();
                 break;
             case "5":
                 usuarioController.Remover();
