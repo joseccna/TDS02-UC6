@@ -23,7 +23,7 @@ var produtoController = host.Services.GetRequiredService<ProdutoController>();
 
 MenuPrincipal();
 
-MenuProdutos();
+//MenuProdutos();
 
 void MenuPrincipal()
 {
