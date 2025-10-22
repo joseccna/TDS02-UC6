@@ -15,15 +15,11 @@ namespace CadastroDeUsuario.Presentation
 
         
 
-        public ConsoleUI(UsuarioController usuarioController) 
+        public ConsoleUI(UsuarioController usuarioController, ProdutoController produtoController) 
         {
             _usuarioController = usuarioController;
-        
-        }
-
-        public ConsoleUI(ProdutoController produtoController)
-        {
             _produtoController = produtoController;
+
         }
 
         //MenuPrincipal();

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VeiculoCadastro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09fbf59bcfc7b8d140818f63d07bfcd6aca49078")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ba5fc5691efeb737938cbabed6324d41b77cab0")]
 [assembly: System.Reflection.AssemblyProductAttribute("VeiculoCadastro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VeiculoCadastro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

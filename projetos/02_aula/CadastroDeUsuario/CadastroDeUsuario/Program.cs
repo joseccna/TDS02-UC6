@@ -20,9 +20,9 @@ var host = Host.CreateDefaultBuilder(args)
 
 }).Build();
 
-var usuarioController = host.Services.GetRequiredService<UsuarioController>();
+//var usuarioController = host.Services.GetRequiredService<UsuarioController>();
 
-var produtoController = host.Services.GetRequiredService<ProdutoController>();
+//var produtoController = host.Services.GetRequiredService<ProdutoController>();
 
 var consoleUI = host.Services.GetRequiredService<ConsoleUI>();
 
