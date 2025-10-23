@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Presentation\\ConsoleUI.cs",
               "ToolTip": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\03_aula\\CadastroVeiculo\\VeiculoCadastro\\Presentation\\ConsoleUI.cs",
               "RelativeToolTip": "Presentation\\ConsoleUI.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T23:29:37.729Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "Controller\\VeiculoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:52:33.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T00:52:33.621Z"
             },
             {
               "$type": "Document",
@@ -66,10 +65,9 @@
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\03_aula\\CadastroVeiculo\\VeiculoCadastro\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:48:23.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T00:48:23.044Z"
             },
             {
               "$type": "Document",
