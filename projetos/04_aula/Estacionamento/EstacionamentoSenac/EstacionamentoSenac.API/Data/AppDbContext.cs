@@ -13,6 +13,7 @@ namespace EstacionamentoSenac.API.Data
 
         public DbSet<Veiculo> Veiculos { get; set; }
 
+        public DbSet<Motorista> Motoristas { get; set; }
 
     }
 }
