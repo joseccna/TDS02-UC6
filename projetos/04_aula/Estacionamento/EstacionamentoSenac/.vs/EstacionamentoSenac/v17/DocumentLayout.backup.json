@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\04_aula\\Estacionamento\\EstacionamentoSenac\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F39DDC75-C93B-4B8F-957A-086243C430AD}|Estacionamento.MAUI\\Estacionamento.MAUI.csproj|c:\\users\\jose.fncarvalho1\\documents\\programa\\tds02-uc6\\projetos\\04_aula\\estacionamento\\estacionamentosenac\\estacionamento.maui\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F39DDC75-C93B-4B8F-957A-086243C430AD}|Estacionamento.MAUI\\Estacionamento.MAUI.csproj|solutionrelative:estacionamento.maui\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FA7A1287-CF20-42F3-8B55-CC41F88811DC}|EstacionamentoSenac.API\\EstacionamentoSenac.API.csproj|c:\\users\\jose.fncarvalho1\\documents\\programa\\tds02-uc6\\projetos\\04_aula\\estacionamento\\estacionamentosenac\\estacionamentosenac.api\\controllers\\motoristacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA7A1287-CF20-42F3-8B55-CC41F88811DC}|EstacionamentoSenac.API\\EstacionamentoSenac.API.csproj|solutionrelative:estacionamentosenac.api\\controllers\\motoristacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\04_aula\\Estacionamento\\EstacionamentoSenac\\Estacionamento.MAUI\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Estacionamento.MAUI\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\04_aula\\Estacionamento\\EstacionamentoSenac\\Estacionamento.MAUI\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Estacionamento.MAUI\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-28T00:51:57.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "VeiculosController.cs",
               "DocumentMoniker": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\04_aula\\Estacionamento\\EstacionamentoSenac\\EstacionamentoSenac.API\\Controllers\\VeiculosController.cs",
               "RelativeDocumentMoniker": "EstacionamentoSenac.API\\Controllers\\VeiculosController.cs",
@@ -46,12 +63,11 @@
               "RelativeToolTip": "EstacionamentoSenac.API\\Controllers\\VeiculosController.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAwwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T23:36:06.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T23:36:06.207Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MotoristaController.cs",
               "DocumentMoniker": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\04_aula\\Estacionamento\\EstacionamentoSenac\\EstacionamentoSenac.API\\Controllers\\MotoristaController.cs",
               "RelativeDocumentMoniker": "EstacionamentoSenac.API\\Controllers\\MotoristaController.cs",
@@ -64,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Motorista.cs",
               "DocumentMoniker": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\04_aula\\Estacionamento\\EstacionamentoSenac\\EstacionamentoSenac.API\\Models\\Motorista.cs",
               "RelativeDocumentMoniker": "EstacionamentoSenac.API\\Models\\Motorista.cs",
@@ -72,12 +88,11 @@
               "RelativeToolTip": "EstacionamentoSenac.API\\Models\\Motorista.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T22:30:19.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T22:30:19.492Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\04_aula\\Estacionamento\\EstacionamentoSenac\\EstacionamentoSenac.API\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "EstacionamentoSenac.API\\Data\\AppDbContext.cs",
@@ -85,12 +100,11 @@
               "RelativeToolTip": "EstacionamentoSenac.API\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T23:28:03.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T23:28:03.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Veiculo.cs",
               "DocumentMoniker": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\04_aula\\Estacionamento\\EstacionamentoSenac\\EstacionamentoSenac.API\\Models\\Veiculo.cs",
               "RelativeDocumentMoniker": "EstacionamentoSenac.API\\Models\\Veiculo.cs",
@@ -98,12 +112,11 @@
               "RelativeToolTip": "EstacionamentoSenac.API\\Models\\Veiculo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T23:11:15.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T23:11:15.903Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC6\\projetos\\04_aula\\Estacionamento\\EstacionamentoSenac\\EstacionamentoSenac.API\\Program.cs",
               "RelativeDocumentMoniker": "EstacionamentoSenac.API\\Program.cs",
@@ -111,8 +124,7 @@
               "RelativeToolTip": "EstacionamentoSenac.API\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T23:09:52.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T23:09:52.478Z"
             }
           ]
         }
