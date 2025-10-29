@@ -1,0 +1,26 @@
+﻿@page "/veiculos"
+@using Estacionamento.MAUI.Models
+@inject HttpClient Http
+
+<h3>Index</h3>
+@if (veiculos == null)
+{
+   <p>Carregando...</p> 
+}
+else if (!veiculos.Any())
+{
+    <p>Nenhum veículo encontrado.</p>
+}
+
+
+
+@code {
+    List<Veiculo>? veiculos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        veiculos = await Http.GetFromJsonAsync<List<Veiculo>>("https://localhost:7243/api/Veiculos");
+    }
+
+
+}
