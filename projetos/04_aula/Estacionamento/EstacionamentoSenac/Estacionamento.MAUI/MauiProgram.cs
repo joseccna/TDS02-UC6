@@ -20,6 +20,8 @@ namespace Estacionamento.MAUI
     		builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<HttpClient>();// tem que configura essa linha 
+            //pois o projeto esta para descktop e essa linha faz requisição HTTP.
 
             return builder.Build();
         }

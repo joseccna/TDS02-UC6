@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EstacionamentoSenac.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251023000616_PrimeiraMigration")]
-    partial class PrimeiraMigration
+    [Migration("20251029225112_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,27 @@ namespace EstacionamentoSenac.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("EstacionamentoSenac.API.Models.Motorista", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("VeiculoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VeiculoId");
+
+                    b.ToTable("Motoristas");
+                });
 
             modelBuilder.Entity("EstacionamentoSenac.API.Models.Veiculo", b =>
                 {
@@ -41,6 +62,15 @@ namespace EstacionamentoSenac.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Veiculos");
+                });
+
+            modelBuilder.Entity("EstacionamentoSenac.API.Models.Motorista", b =>
+                {
+                    b.HasOne("EstacionamentoSenac.API.Models.Veiculo", "Veiculo")
+                        .WithMany()
+                        .HasForeignKey("VeiculoId");
+
+                    b.Navigation("Veiculo");
                 });
 #pragma warning restore 612, 618
         }
