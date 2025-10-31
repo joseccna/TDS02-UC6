@@ -1,13 +1,52 @@
-﻿@* @page "/motoristas"
+﻿@page "/motorista"
 @inject HttpClient Http
 @using Estacionamento.MAUI.Models
 
-<h3>Index</h3>
-@if(Motorista == null)
+<h3>Lista de Motoristas</h3>
+
+<a href="/motorista/create" class="btn btn-primary">Cadastrar Motorista</a>
+
+@if(motorista == null)
 {
     <p>Carregando...</p>
 }
-else if(!Motorista.Any())
+else if (!motorista.Any())
+{
+    <p>Nenhum motorista encontrado.</p>
+
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">VeiculoId</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var veiculo in motorista)
+            {
+                <tr>
+                    <td>@veiculo.Id</td>
+                    <td>@veiculo.Nome</td>
+                    <td>@veiculo.VeiculoId</td>
+                    <td>
+                        <a href="#" class="btn btn-warning">Editar</a>
+                        <a href="#" class="btn btn-info">Detalhes</a>
+                        <a href="#" class="btn btn-danger">Excluir</a>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    
+}
 
 
 
@@ -15,5 +54,10 @@ else if(!Motorista.Any())
 
 
 @code {
+    List<Motorista>? motorista;
 
-} *@
+    protected override async Task OnInitializedAsync()
+    {
+        motorista = await Http.GetFromJsonAsync<List<Motorista>>("https://localhost:4000/api/Motorista");
+    }
+}
