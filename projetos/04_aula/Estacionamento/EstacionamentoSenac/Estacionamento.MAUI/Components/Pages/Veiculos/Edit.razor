@@ -4,19 +4,11 @@
 
 <h3>Editar Veículo</h3>
 
-if(veiculo == null)
+@if(veiculo == null)
 {
     <p><em>Carregando...</em></p>
 }
-else
-{
-    @veiculo.Marca
-    <br />
 
-    @veiculo.Modelo
-    <br />
-
-}
 
 @code {
     [Parameter]
