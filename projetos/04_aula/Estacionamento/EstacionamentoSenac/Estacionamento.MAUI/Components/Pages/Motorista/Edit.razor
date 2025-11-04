@@ -1,8 +1,50 @@
 ﻿@page "/motorista/edit/{id:int}"
+@inject HttpClient Http;
+@inject NavigationManager NavigationManager;
+@using Estacionamento.MAUI.Models;
 
-<h3>Edit</h3>
+<h3>Editar Motorista</h3>
+@if (motorista == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <form @onsubmit="UpdateMotorista">
+                <div class="form-group">
+                <label for="nome" class="control-label">Nome</label>
+                <input form="nome" class="form-control" @bind="motorista.Nome" />
+                 </div>
+                <div class="form-group">
+                    <label for="veiculoId" class="control-label">VeiculoId</label>
+                    <input form="veiculoId" class="form-control" @bind="motorista.VeiculoId" />
+                </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a href="/motorista" class="btn btn-light">Voltar</a>
+            </div>
+            </form>
+        </div>
+    </div>
+         
 
+
+
+}
 @code {
     [Parameter]
     public int Id { get; set; }
+    private Motorista? motorista;
+    protected override async Task OnInitializedAsync()
+    {
+        motorista = await Http.GetFromJsonAsync<Motorista>($"https://localhost:4000/api/motoristas/{Id}");
+    }
+
+    async Task UpdateMotorista()
+    {
+        await Http.PutAsJsonAsync<Motorista>($"https://localhost:4000/api/motoristas/{Id}", motorista);
+        NavigationManager.NavigateTo("/motorista");
+    }
 }

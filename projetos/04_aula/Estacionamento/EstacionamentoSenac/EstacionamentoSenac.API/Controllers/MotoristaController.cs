@@ -2,6 +2,8 @@
 using EstacionamentoSenac.API.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 
 namespace EstacionamentoSenac.API.Controllers
@@ -18,16 +20,30 @@ namespace EstacionamentoSenac.API.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public ActionResult<List<Motorista>> GetMotoristas()
+        //[HttpGet]
+        //public ActionResult<List<Motorista>> GetMotoristas()
+        //{
+        //    return Ok(_context.Motoristas.ToList());
+        //}
+
+
+
+        [HttpGet]public ActionResult<List<Motorista>> GetMotoristasEVeiculos()
         {
-            return Ok( _context.Motoristas.ToList());
+            var result = _context.Motoristas.Include(m => m.Veiculo).ToList();
+            return Ok(result);
         }
+
+
+
 
         [HttpGet("{id}")]
         public ActionResult <Motorista> GetMotoristaById(int id)
         {
-            var motorista = _context.Motoristas.Find(id);
+            var motorista = _context.Motoristas
+                .Include(m => m.Veiculo)
+                .FirstOrDefault(Veiculo => Veiculo.Id == id);
+
             if (motorista == null)
                 return NotFound();
 
@@ -53,10 +69,10 @@ namespace EstacionamentoSenac.API.Controllers
             if (motoristaExistente == null) return NotFound();
 
 
-            motoristaExistente.Nome = motoristaExistente.Nome;
-            motoristaExistente.VeiculoId = motoristaExistente.VeiculoId;
+            motoristaExistente.Nome = motoristaNovo.Nome;
+            motoristaExistente.VeiculoId = motoristaNovo.VeiculoId;
 
-            _context.Motoristas.Update(motoristaNovo);
+            _context.Motoristas.Update(motoristaExistente);
             _context.SaveChanges();
 
             return NoContent();
