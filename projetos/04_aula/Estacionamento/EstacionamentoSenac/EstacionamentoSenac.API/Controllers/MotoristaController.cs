@@ -20,19 +20,19 @@ namespace EstacionamentoSenac.API.Controllers
             _context = context;
         }
 
-        //[HttpGet]
-        //public ActionResult<List<Motorista>> GetMotoristas()
-        //{
-        //    return Ok(_context.Motoristas.ToList());
-        //}
-
-
-
-        [HttpGet]public ActionResult<List<Motorista>> GetMotoristasEVeiculos()
+        [HttpGet]
+        public ActionResult<List<Motorista>> GetMotoristas()
         {
-            var result = _context.Motoristas.Include(m => m.Veiculo).ToList();
-            return Ok(result);
+            return Ok(_context.Motoristas.Include(m => m.Veiculo).ToList());
         }
+
+
+
+        //[HttpGet]public ActionResult<List<Motorista>> GetMotoristasEVeiculos()
+        //{
+        //    var result = _context.Motoristas.Include(m => m.Veiculo).ToList();
+        //    return Ok(result);
+        //}
 
 
 

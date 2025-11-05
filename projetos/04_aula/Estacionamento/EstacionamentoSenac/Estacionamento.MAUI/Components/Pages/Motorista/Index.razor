@@ -22,7 +22,8 @@ else
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nome</th>
-                <th scope="col">VeiculoId</th>
+                <th scope="col">Veiculo</th>
+                <th scope="col">Ações</th>
 
             </tr>
         </thead>
@@ -33,7 +34,12 @@ else
                 <tr>
                     <td>@motorista.Id</td>
                     <td>@motorista.Nome</td>
-                    <td>@motorista.VeiculoId</td>
+                    <td>
+                        @(motorista.veiculo != null ? $"{motorista.veiculo.Marca}" : $"")
+                    </td>
+
+
+
                     <td>
                         <a href="/motorista/edit/@motorista.Id" class="btn btn-warning">Editar</a>
                         <a href="/motorista/details/@motorista.Id" class="btn btn-info">Detalhes</a>

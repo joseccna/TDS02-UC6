@@ -15,11 +15,11 @@ else
             <form @onsubmit="UpdateMotorista">
                 <div class="form-group">
                 <label for="nome" class="control-label">Nome</label>
-                <input form="nome" class="form-control" @bind="motorista.Nome" />
+                <input for="nome" class="form-control" @bind="motorista.Nome" />
                  </div>
                 <div class="form-group">
                     <label for="veiculoId" class="control-label">VeiculoId</label>
-                    <input form="veiculoId" class="form-control" @bind="motorista.VeiculoId" />
+                    <input for="veiculoId" class="form-control" @bind="motorista.VeiculoId" />
                 </div>
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
@@ -36,15 +36,17 @@ else
 @code {
     [Parameter]
     public int Id { get; set; }
+
     private Motorista? motorista;
+
     protected override async Task OnInitializedAsync()
     {
-        motorista = await Http.GetFromJsonAsync<Motorista>($"https://localhost:4000/api/motoristas/{Id}");
+        motorista = await Http.GetFromJsonAsync<Motorista>($"https://localhost:4000/api/motorista/{Id}");
     }
 
     async Task UpdateMotorista()
     {
-        await Http.PutAsJsonAsync<Motorista>($"https://localhost:4000/api/motoristas/{Id}", motorista);
+        await Http.PutAsJsonAsync<Motorista>($"https://localhost:4000/api/motorista/{Id}", motorista);
         NavigationManager.NavigateTo("/motorista");
     }
 }
