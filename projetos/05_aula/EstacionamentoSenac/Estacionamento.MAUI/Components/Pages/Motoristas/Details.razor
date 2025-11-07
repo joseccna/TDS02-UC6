@@ -1,0 +1,60 @@
+﻿@page "/motoristas/details/{id:int}"
+@inject HttpClient Http;
+@using Estacionamento.MAUI.Models;
+
+<h1>Detalhes do Motorista</h1>
+
+@if (motoristas == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <div>
+        <h4>Motorista</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Nome
+            </dt>
+            <dd class="col-sm-10">
+                @motoristas.Nome
+            </dd>
+            <dt class="col-sm-2">
+                CPF
+            </dt>
+            <dd class="col-sm-10">
+                @motoristas.Cpf
+            </dd>
+            <dt class="col-sm-2">
+                Telefone
+            </dt>
+            <dd class="col-sm-10">
+                @motoristas.Telefone
+            </dd>
+            <dt class="col-sm-2">
+                ID
+            </dt>
+            <dd class="col-sm-10">
+                @motoristas.Id
+            </dd>
+        </dl>
+    </div>
+}
+
+<div>
+    <a href="/motoristas" class="btn btn-light">Voltar</a>
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private Motorista? motoristas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Busca um motorista na API
+        motoristas = await Http.GetFromJsonAsync<Motorista>($"https://localhost:4000/api/motoristas/{Id}");
+    }
+
+}
