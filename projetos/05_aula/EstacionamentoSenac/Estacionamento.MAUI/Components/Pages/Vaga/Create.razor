@@ -1,0 +1,50 @@
+﻿@page "/vagas/create"
+@inject HttpClient Http;
+@inject NavigationManager NavigationManager;
+@using Estacionamento.MAUI.Models;
+
+<h3 class="text-center mb-3">Nova Vaga</h3>
+<hr />
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form @onsubmit="CreateVaga">
+            <div class="form-group">
+                <label for="nome" class="control-label">Localizaçâo</label>
+                <input for="nome" class="form-control" @bind="vagas.Localizacao" />
+            </div>
+            <div class="form-group">
+                <label for="veiculo" class="control-label">Tipo da Vaga</label>
+                <input for="veiculo" class="form-control" @bind="vagas.TipoVaga">
+
+
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a href="/vagas" class="btn btn-light">Voltar</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+@code {
+    Vagas vagas = new Vagas(); // Criar o objeto
+
+
+    // Chamar o endpiont
+    async Task CreateVaga()
+    {
+        await Http.PostAsJsonAsync("https://localhost:4000/api/Vagas", vagas);
+        NavigationManager.NavigateTo("/vagas");
+    }
+
+
+
+
+}

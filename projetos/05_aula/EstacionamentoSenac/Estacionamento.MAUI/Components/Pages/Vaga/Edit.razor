@@ -1,0 +1,63 @@
+﻿@page "/vagas/edit/{id:int}"
+@inject HttpClient Http;
+@using Estacionamento.MAUI.Models;
+@inject NavigationManager NavigationManager;
+
+<h3>Editar Vagas</h3>
+
+@if(vagas == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <div class="row">
+    <div class="col-md-4">
+    <form @onsubmit=UpdateVaga>
+        <div class="form-group">
+            <label for="localizacao" class="form-label">Localização</label>
+            <input for="localizacao" class="form-control" @bind="vagas.Localizacao" />
+        </div>
+        <div class="form-group">
+            <label for="tipoVaga" class="form-label">Tipo da Vaga</label>
+            <input id="tipoVaga" class="form-control" @bind="vagas.TipoVaga" />
+        </div>
+        <div>
+            <input type="submit" value="Savar" class="btn btn-primary" />
+            <a href="/vagas" class="btn btn-light">Voltar</a>
+        </div>
+    </form>
+   </div>
+   </div>
+
+}
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private Vagas? vagas;
+    protected override async Task OnInitializedAsync()
+    {
+        vagas = await Http.GetFromJsonAsync<Vagas>($"https://localhost:4000/api/Vagas/{Id}");
+    }
+    private async Task UpdateVaga()
+    {
+        if (vagas != null)
+        {
+            var response = await Http.PutAsJsonAsync($"https://localhost:4000/api/Vagas/{Id}", vagas);
+            if (response.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo("/vagas");
+            }
+            else
+            {
+                // Tratar erro de atualização
+            }
+        }
+    }
+}
+
+
+
+
