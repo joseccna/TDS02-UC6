@@ -4,7 +4,7 @@
 
 <h3 class="text-center mb-3">Detalhes do Motorista</h3>
 
-@if (true)
+@if (motorista == null)
 {
     <p><em>Carregando...</em></p>
 }
@@ -14,9 +14,9 @@ else
         <h4>Motorista</h4>
         <hr />
         <dl class="row">
-    <p><strong>Nome:</strong> Nome</p>
-    <p><strong>CPF:</strong> Cpf</p>
-    <p><strong>Telefone:</strong> Telefone</p>
+    <p><strong>Nome:</strong> @motorista.Nome</p>
+    <p><strong>CPF:</strong> @motorista.Cpf</p>
+    <p><strong>Telefone:</strong> @motorista.Telefone</p>
             <dt class="col-sm-2">
                 Veículos
             </dt>
@@ -26,11 +26,20 @@ else
         </dl>
     </div>
     <div>
-        <a href="#" class="btn btn-warning">Editar</a>
-        <a href="#" class="btn btn-light">Voltar</a>
+        <a href="/motoristas/edit/@motorista.Id" class="btn btn-warning">Editar</a>
+        <a href="/motoristas" class="btn btn-light">Voltar</a>
     </div>
 }
 
 @code {
+    [Parameter]
+    public int Id { get; set; }
+    private Motorista? motorista;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Lógica para carregar os dados do motorista pelo ID
+        motorista = await Http.GetFromJsonAsync<Motorista>($"https://localhost:4000/api/motoristas/{Id}"); // Simulação de carregamento
+    }
    
 }

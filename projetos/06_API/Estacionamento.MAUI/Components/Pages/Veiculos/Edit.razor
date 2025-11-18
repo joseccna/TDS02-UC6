@@ -5,7 +5,7 @@
 
 <h3 class="text-center mb-3">Editar Veículo</h3>
 
-@if (false)
+@if (veiculo == null)
 {
     <p><em>Carregando...</em></p>
 }
@@ -14,25 +14,29 @@ else
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form >
+            <form @onsubmit="UpdateVeiculo">
         <div class="mb-3">
             <label for="placa" class="form-label">Placa</label>
-            <InputText id="placa"  class="form-control" />
+            <input for="placa"  class="form-control" @bind="veiculo.Placa" />
         </div>
         <div class="mb-3">
             <label for="modelo" class="form-label">Modelo</label>
-            <InputText id="modelo"  class="form-control" />
+            <input for="modelo"  class="form-control" @bind="veiculo.Modelo" />
         </div>
         <div class="mb-3">
             <label for="cor" class="form-label">Cor</label>
-            <InputText id="cor"  class="form-control" />
+            <input for="cor"  class="form-control" @bind="veiculo.Cor" />
         </div>
         <div class="mb-3">
             <label for="motorista" class="form-label">Motorista</label>
-            @* <InputSelect id="motorista"  class="form-select">
+            <InputSelect id="motorista"  class="form-select" @bind-Value="veiculo.MotoristaId">
                 <option value="0">Selecione um motorista</option>
+                @foreach (var motorista in motoristas)
+                {
+                    <option value="@motorista.Id">@motorista.Nome</option>
+                }
                 
-            </InputSelect> *@
+            </InputSelect>
         </div>
                 <div class="form-group mt-3">
                     <input type="submit" value="Salvar" class="btn btn-primary" />
@@ -44,5 +48,24 @@ else
 }
 
 @code {
-    
+
+    [Parameter]
+    public int Id { get; set; }
+    private Veiculo? veiculo;
+
+    List<Motorista>? motoristas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        veiculo = await Http.GetFromJsonAsync<Veiculo>($"https://localhost:4000/api/veiculos/{Id}");
+
+        motoristas = await Http.GetFromJsonAsync<List<Motorista>>("https://localhost:4000/api/motoristas");
+    }
+
+    async Task UpdateVeiculo()
+    {
+        await Http.PutAsJsonAsync<Veiculo>($"https://localhost:4000/api/veiculos/{Id}", veiculo);
+        NavigationManager.NavigateTo("/veiculos");
+    }
+
 }

@@ -4,7 +4,7 @@
 
 <h3 class="text-center mb-3">Detalhes do Veículo</h3>
 
-@if (true)
+@if (veiculo == null)
 {
     <p><em>Carregando...</em></p>
 }
@@ -14,10 +14,10 @@ else
         <h4>Veículo</h4>
         <hr />
         <dl class="row">
-    <p><strong>Placa:</strong> </p>
-    <p><strong>Modelo:</strong> </p>
-    <p><strong>Cor:</strong> </p>
-    <p><strong>Motorista:</strong> </p>
+    <p><strong>Placa:</strong> @veiculo.Placa </p>
+    <p><strong>Modelo:</strong> @veiculo.Modelo </p>
+    <p><strong>Cor:</strong> @veiculo.Cor </p>
+    <p><strong>Motorista:</strong> @motorista.Nome </p>
         </dl>
     </div>
     <div>
@@ -26,5 +26,25 @@ else
 }
 
 @code {
+
+
+
+    [Parameter]
+    public int Id { get; set; }
+    private Veiculo? veiculo;
+
+    private Motorista? motorista;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        veiculo = await Http.GetFromJsonAsync<Veiculo>($"https://localhost:4000/api/veiculos/{Id}");
+        if (veiculo != null)
+        {
+            motorista = await Http.GetFromJsonAsync<Motorista>($"https://localhost:4000/api/motoristas/{veiculo.MotoristaId}");
+        }
+
+
+    }
     
 }
