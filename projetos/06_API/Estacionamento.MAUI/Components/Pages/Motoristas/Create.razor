@@ -22,6 +22,17 @@
             <label for="telefone" class="form-label">Telefone</label>
             <input for="telefone"  class="form-control" @bind="motorista.Telefone" />
         </div>
+        <div class="mb-3">
+            <label for="veiculo" class="form-label">Veículo</label>
+             <InputSelect id="veiculo" class="form-select" @bind-Value="motorista.Veiculos">
+                <option value="0">Selecione um veículo</option>
+                    @foreach (var veiculo in veiculos)
+                    {
+                        <option value="@veiculo.Id">@veiculo.Placa - @veiculo.Modelo</option>
+                    }
+                </InputSelect>
+
+        </div>
             <div class="form-group mt-3">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
                 <a href="/motoristas" class="btn btn-light">Voltar</a>
@@ -36,7 +47,7 @@
 
 @code {
     Motorista motorista = new Motorista(); // Instancia um novo objeto Motorista
-    List<Veiculo>? veiculos; // Lista para armazenar os veículos
+    List<Veiculo>? veiculos = new(); // Lista para armazenar os veículos
 
     protected override async Task OnInitializedAsync()
     {
