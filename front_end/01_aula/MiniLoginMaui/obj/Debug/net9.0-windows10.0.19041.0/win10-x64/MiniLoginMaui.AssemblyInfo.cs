@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniLoginMaui")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9a5416f32dad12ba5d7f01d59b67a299d52397fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f37bd22cec3422effd794870ad4ef3c043a4c676")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniLoginMaui")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniLoginMaui")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

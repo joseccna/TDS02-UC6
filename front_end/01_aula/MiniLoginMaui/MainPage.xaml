@@ -6,7 +6,7 @@
              >
     <ContentPage.Content>
         <!--padding espassamento interno / spacing margem externa do layout-->
-        <StackLayout Padding="200" Spacing="16">
+        <StackLayout MaximumWidthRequest="500"  VerticalOptions="Center"  Spacing="16">
             
             <Label Text="Bem-vindo(a)"/>
             <Label Text="Faça seu login para continuar"/>
@@ -49,7 +49,9 @@
                 <Picker
                     x:Name="PerfilPicker"
                     Grid.Row="2"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                    SelectedIndexChanged="OnProfileChanged">
+                    
                     <Picker.Items>
                         <x:String>Administrador</x:String>
                         <x:String>Usuario</x:String>
@@ -61,7 +63,8 @@
             <Button
                 x:Name="LoginButton"
                 Text="Entrar"
-             />
+                Clicked="LoginButton_Clicked"
+               />
 
             <Label
                 x:Name="Feedback"
