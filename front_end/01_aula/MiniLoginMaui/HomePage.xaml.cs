@@ -27,14 +27,11 @@ namespace MiniLoginMaui
 
         }
 
-        private async Task OnLogoutClicked(object sender, EventArgs e)
+        private async void OnLogoutClicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//MainPage");
         }
-        private async Task OnLoginClicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync("//MainPage");
-        }
+
 
 
     }

@@ -43,7 +43,7 @@ namespace MiniLoginMaui
             Feedback.TextColor = Colors.Black;
         }
 
-        private async Task OnLoginClicked(object sender, EventArgs e)
+        private async void LoginButton_Clicked(object sender, EventArgs e)
         {
             var username = UserNameEntry.Text;
             var password = SenhaEntry.Text;
@@ -59,22 +59,14 @@ namespace MiniLoginMaui
             Feedback.Text = $"Bem-vindo, {username}! Voce entrou como {_currentProfile}.";
             Feedback.TextColor = Colors.Green;
 
-            var route = $"{nameof(HomePage)}? username = " +
-                $"{Uri.EscapeDataString(username)} &profile=" +
-                $"{Uri.EscapeDataString(_currentProfile)}";
+            var route = $"{nameof(HomePage)}?username = {Uri.EscapeDataString(username)}&profile = {Uri.EscapeDataString(_currentProfile)}";
 
             await Shell.Current.GoToAsync(route);
 
 
         }
 
-        public void LoginButton_Clicked(object sender, EventArgs e)
-        {
-            UserNameEntry.Text = "JoseSilva";
-            DisplayActionSheet("Teste", "Mensagem de teste", "Cancel", ["Botao1", "Botao2"]);
 
-
-        }
     }
 
 }
